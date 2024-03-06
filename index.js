@@ -46,9 +46,9 @@ app.post("/", async (req, res) => {
     })
   } 
   catch(err){
-    console.error(err);
+    console.log(err.message)
     res.render("index.ejs",{
-         errorMessage :err.message
+         errorMessage :"No activities found for your criteria."
     })
   }
 });
