@@ -32,7 +32,7 @@ app.post("/", async (req, res) => {
     let result
     
     const response = await axios.get(`https://bored-api.appbrewery.com/filter?type=${type}&participants=${participants}`);
-    result = response.data
+    result = response.data   //returns JSON object with no need for parsing it again.
     if(response.status === 404){
         notFoundMsg ="No activities found for your criteria."
         res.render("index.js",{
